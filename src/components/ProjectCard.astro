@@ -1,0 +1,62 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	image?: string;
+}
+
+const { title, description, image } = Astro.props;
+---
+
+<div class="project-card">
+	{image && <div class="project-image" style={`background-image: url(${image})`}></div>}
+	<div class="project-content">
+		<h3>{title}</h3>
+		<p>{description}</p>
+		<button class="learn-more">Learn More</button>
+	</div>
+</div>
+
+<style>
+	.project-card {
+		background: white;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease;
+	}
+	.project-card:hover {
+		transform: translateY(-5px);
+	}
+	.project-image {
+		height: 250px;
+		background-size: cover;
+		background-position: center;
+		position: relative;
+	}
+	.project-content {
+		padding: 1.5rem;
+	}
+	h3 {
+		color: var(--primary);
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+	p {
+		color: var(--text);
+		margin-bottom: 1rem;
+		line-height: 1.6;
+	}
+	.learn-more {
+		background: var(--primary);
+		color: white;
+		border: none;
+		padding: 0.5rem 1rem;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: background 0.3s ease;
+	}
+	.learn-more:hover {
+		background: var(--accent);
+	}
+</style>

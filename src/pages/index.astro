@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ContactSection from '../components/ContactSection.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<Layout title="Anasuya Construction - Professional Construction Services">
+	<main>
+		<section class="hero">
+			<div class="hero-content">
+				<h1>Welcome to Anasuya Construction</h1>
+				<p>Your trusted partner in construction excellence</p>
+			</div>
+		</section>
+
+		<section id="services" class="services">
+			<div class="container">
+				<h2>Our Services</h2>
+				<div class="service-grid">
+					<ServiceCard
+						title="Building Approvals"
+						description="Professional assistance in obtaining all necessary building permits and approvals for your construction projects."
+						icon="🏗️"
+					/>
+					<ServiceCard
+						title="Factory Plans"
+						description="Expert design and planning services for industrial facilities and factory layouts."
+						icon="🏭"
+					/>
+					<ServiceCard
+						title="Fire Plans"
+						description="Comprehensive fire safety planning and documentation for commercial and industrial buildings."
+						icon="🚒"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<section id="residential" class="residential">
+			<div class="container">
+				<h2>Residential Projects</h2>
+				<div class="project-grid">
+					<ProjectCard
+						title="Luxury Villas"
+						description="Premium 3BHK and 4BHK villas with modern amenities"
+						image="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop"
+					/>
+					<ProjectCard
+						title="Modern Apartments"
+						description="Contemporary living spaces with smart home features"
+						image="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=800&auto=format&fit=crop"
+					/>
+					<ProjectCard
+						title="Garden Homes"
+						description="Eco-friendly residences with private gardens"
+						image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop"
+					/>
+					<ProjectCard
+						title="Premium Flats"
+						description="High-rise apartments with panoramic views"
+						image="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?q=80&w=800&auto=format&fit=crop"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<section id="commercial" class="commercial">
+			<div class="container">
+				<h2>Commercial Projects</h2>
+				<div class="project-grid">
+					<ProjectCard
+						title="Industrial Complex"
+						description="State-of-the-art manufacturing facility"
+						image="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=800&auto=format&fit=crop"
+					/>
+					<ProjectCard
+						title="Commercial Center"
+						description="Modern shopping and office complex"
+						image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"
+					/>
+					<ProjectCard
+						title="Office Space"
+						description="Premium corporate environments"
+						image="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<ContactSection
+			address="Vedhayapalem Gate Road, Vedhayapalem, Nellore, Andhra Pradesh"
+			phone="+91 90008 62525"
+			email="anilkumar133170@gmail.com"
+		/>
+	</main>
+</Layout>
+
+<style>
+	main {
+		width: 100%;
+	}
+	.hero {
+		background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920&auto=format&fit=crop');
+		background-size: cover;
+		background-position: center;
+		height: 80vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: white;
+	}
+	.hero-content h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+	.hero-content p {
+		font-size: 1.5rem;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	}
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 4rem 2rem;
+	}
+	h2 {
+		text-align: center;
+		color: var(--primary);
+		font-size: 2.5rem;
+		margin-bottom: 3rem;
+	}
+	.service-grid, .project-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	.residential, .commercial {
+		background: #f9fafb;
+		padding: 4rem 0;
+	}
+	.commercial {
+		background: white;
+	}
+	@media (max-width: 768px) {
+		.hero-content h1 {
+			font-size: 2rem;
+		}
+		.hero-content p {
+			font-size: 1.2rem;
+		}
+		.project-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
